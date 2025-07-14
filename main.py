@@ -42,6 +42,11 @@ def main():
                 print("Game Over!")
                 sys.exit()
 
+            for shot in shots:
+                if asteroid.colision(shot):
+                    asteroid.split()
+                    shot.kill()
+
         screen.fill((0,0,0)) #Preenche o fundo
 
         for thing in drawable:
